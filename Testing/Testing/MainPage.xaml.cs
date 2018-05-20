@@ -14,11 +14,23 @@ namespace Testing
 			InitializeComponent();
         }
 
-        internal async void btnNext_Clicked(object sender, EventArgs e)
+        internal async void btnCheckUrl_Clicked(object sender, EventArgs e)
         {
            var url = entryUrl.Text;
-           await Navigation.PushAsync(new NavigationPage(new SecondPage(url)));
+           await Navigation.PushAsync(new HttpClientPage(url));
         }
 
+        internal async void btnOpenUrl_Clicked(object sender, EventArgs e)
+        {
+            var url = entryUrl.Text;
+            if (await DisplayAlert("Czy na pewno?", "Czy na pewno chcesz otworzyć stronę? " + url, "TAK", "NIE"))
+            {
+                await Navigation.PushAsync(new WebViewPage(url));
+            }
+            else
+            {
+                await DisplayAlert("Dobrze", "Nie otwieram strony", "OK");
+            }
+        }
     }
 }

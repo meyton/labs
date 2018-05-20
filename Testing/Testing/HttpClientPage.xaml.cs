@@ -8,15 +8,14 @@ using Xamarin.Forms;
 
 namespace Testing
 {
-	public partial class SecondPage : ContentPage
+	public partial class HttpClientPage : ContentPage
 	{
         private string _url;
 
-		public SecondPage(string url)
+		public HttpClientPage(string url)
 		{
 			InitializeComponent();
             _url = url;
-            //wvWeb.Source = url;
         }
 
         internal async void btnClicked(object sender, EventArgs e)
@@ -25,6 +24,7 @@ namespace Testing
             {
                 var response = await client.GetAsync(_url);
                 var status = response.StatusCode;
+                await DisplayAlert("Status Code", "Strona odpowiedziała statusem: " + status, "OK");
             }
         }
     }

@@ -12,7 +12,6 @@ namespace Testing
 		public App ()
 		{
 			InitializeComponent();
-
 			MainPage = new NavigationPage(new Testing.MainPage());
 		}
 

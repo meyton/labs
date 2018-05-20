@@ -5,28 +5,27 @@
              x:Class="Testing.MainPage">
 
     <StackLayout>
-        
+
         <Label x:Name="lblTest"
         BackgroundColor="BlueViolet"
-        Text="Welcome to Xamarin.Forms!" 
-        VerticalOptions="Center" 
-        HorizontalOptions="Center" />
-
-        <Label x:Name="lblTest2"
-        BackgroundColor="BlueViolet"
-        Text="Welcome to Xamarin.Forms!" 
-        VerticalOptions="Center" 
-        HorizontalOptions="Center" />
+        Text="Welcome to Xamarin.Forms!"
+        HorizontalOptions="Center"/>
 
         <Entry x:Name="entryUrl"
-               Placeholder="Tutaj wpisz URL" />
+               Placeholder="Tutaj wpisz URL (wraz z https://)" />
         
-        <Button x:Name="btnNext"
-            Text="Open New Page" 
-            Clicked="btnNext_Clicked"
+        <Button x:Name="btnOpenUrl"
+            Text="Open Page in WebView"
+            Clicked="btnOpenUrl_Clicked"
             BackgroundColor="{StaticResource PrimaryColor}"
          />
-        
+
+        <Button x:Name="btnCheckUrl"
+            Text="Check Page in HttpClient"
+            Clicked="btnCheckUrl_Clicked"
+            BackgroundColor="{StaticResource PrimaryColor}"
+         />
+
     </StackLayout>
     
 </ContentPage>
