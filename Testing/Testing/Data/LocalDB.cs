@@ -2,6 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
+using Testing.Models.Sqlite;
 
 namespace Testing.Data
 {
@@ -12,6 +14,17 @@ namespace Testing.Data
         public LocalDB(string dbPath)
         {
             database = new SQLiteAsyncConnection(dbPath);
+            Init();
+        }
+
+        private async void Init()
+        {
+            await database.CreateTableAsync<Student>();
+        }
+
+        private async Task<bool> IsItOK()
+        {
+            return await Task.FromResult<bool>(true);
         }
     }
 }

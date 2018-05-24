@@ -10,9 +10,20 @@ namespace Testing
 {
 	public partial class App : Application
 	{
-        public LocalDB LocalDatabase { get; set; }
+        private static LocalDB localDB;
+        public static LocalDB LocalDB
+        {
+            get
+            {
+                if (localDB == null)
+                {
+                    localDB = new LocalDB(DependencyService.Get<IFileHelper>().GetLocalFilePath("App.db3"));
+                }
+                return localDB;
+            }
+        }
 
-		public App ()
+        public App ()
 		{
             var fileHelper = DependencyService.Get<IFileHelper>();
             var file = fileHelper.GetLocalFilePath("app.db3");

@@ -20,7 +20,7 @@ namespace Testing
             Properties.AppProperties["btnClickedCount"] = 1;
             await Application.Current.SavePropertiesAsync();
 
-
+            var db = App.LocalDB;
 
             var url = entryUrl.Text;
             await Navigation.PushAsync(new HttpClientPage(url));
