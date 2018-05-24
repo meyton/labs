@@ -2,15 +2,21 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using Testing.Data;
+using Testing.Services.Interfaces;
 using Xamarin.Forms;
 
 namespace Testing
 {
 	public partial class App : Application
 	{
+        public LocalDB LocalDatabase { get; set; }
+
 		public App ()
 		{
+            var fileHelper = DependencyService.Get<IFileHelper>();
+            var file = fileHelper.GetLocalFilePath("app.db3");
+            LocalDatabase = new LocalDB(file);
 			InitializeComponent();
 			MainPage = new NavigationPage(new Testing.MainPage());
 		}

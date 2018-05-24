@@ -3,21 +3,32 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Testing.Data;
 using Xamarin.Forms;
 
 namespace Testing
 {
-	public partial class MainPage : ContentPage
-	{
-		public MainPage()
-		{
-			InitializeComponent();
+    public partial class MainPage : ContentPage
+    {
+        public MainPage()
+        {
+            InitializeComponent();
         }
 
         internal async void btnCheckUrl_Clicked(object sender, EventArgs e)
         {
-           var url = entryUrl.Text;
-           await Navigation.PushAsync(new HttpClientPage(url));
+            Properties.AppProperties["btnClickedCount"] = 1;
+            await Application.Current.SavePropertiesAsync();
+
+
+
+            var url = entryUrl.Text;
+            await Navigation.PushAsync(new HttpClientPage(url));
+        }
+
+        internal async void btnCheckProperties_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new PropertiesPage());
         }
 
         internal async void btnOpenUrl_Clicked(object sender, EventArgs e)
