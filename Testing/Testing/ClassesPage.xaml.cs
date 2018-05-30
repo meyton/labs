@@ -16,13 +16,13 @@ namespace Testing
 		public ClassesPage ()
 		{
 			InitializeComponent();
-            InitializeListView();
 		}
 
         private async void InitializeListView()
         {
             _classes = await App.LocalDB.GetItems<Class>();
             lvClasses.ItemsSource = _classes;
+            lvClasses.ItemTapped -= LvClasses_ItemTapped;
             lvClasses.ItemTapped += LvClasses_ItemTapped;
         }
 
@@ -30,7 +30,18 @@ namespace Testing
         {
             var selectedClass = (Class)e.Item;
             var students = await App.LocalDB.GetStudentsByClassId(selectedClass.ID);
-            await Navigation.PushAsync(new StudentsPage(students));
+            await Navigation.PushAsync(new StudentsPage(students, selectedClass));
+        }
+
+        internal async void btnAddNew_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AddNewClassPage());
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            InitializeListView();
         }
     }
 }

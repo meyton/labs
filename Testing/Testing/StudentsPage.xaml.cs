@@ -13,11 +13,13 @@ namespace Testing
 	public partial class StudentsPage : ContentPage
 	{
         private List<Models.UI.Student> _students;
+        private Class _class;
 
-		public StudentsPage(List<Student> students)
+		public StudentsPage(List<Student> students, Class passedClass)
 		{
 			InitializeComponent();
             _students = new List<Models.UI.Student>();
+            _class = passedClass;
 
             foreach (var s in students)
             {
@@ -31,6 +33,11 @@ namespace Testing
             }
 
             lvStudents.ItemsSource = _students;
+        }
+
+        internal async void btnAddNew_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AddNewStudentPage(_class.ID));
         }
     }
 }

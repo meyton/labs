@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Testing.AddNewStudentPage">
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <Label Text="Dodaj nowego studenta"
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand" />
+            <Entry x:Name="entryFirstName" Placeholder="Wprowadź imię..." />
+            <Entry x:Name="entryLastName" Placeholder="Wprowadź nazwisko..." />
+            <Entry x:Name="entryGrade" Placeholder="Wprowadź ocenę..." />
+            <Button Margin="40" Text="Dodaj do bazy" Clicked="btnAdd_Clicked" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

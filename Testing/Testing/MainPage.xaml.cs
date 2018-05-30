@@ -75,15 +75,19 @@ namespace Testing
 
         internal async void btnCreateOld_Clicked(object sender, EventArgs e)
         {
+            var classes = new List<Class>()
+            {
+                new Class() { Name = "Inf 1A", Teacher = "Marcin Wesel" }
+            };
+
+            await App.LocalDB.SaveItemAsync(classes.First());
+
             var team = new List<Student>()
             {
-                new Student() { FirstName = "Marcin", LastName = "Testowy", Grade = 2, ClassID = 1 },
-                new Student() { FirstName = "Krzysztof", LastName = "Tester", Grade = 3, ClassID = 1 },
-                new Student() { FirstName = "Rafał", LastName = "Kowalski", Grade = 5, ClassID = 2 },
-                new Student() { FirstName = "Grzegorz", LastName = "Nowak", Grade = 3, ClassID = 2 },
-                new Student() { FirstName = "Iza", LastName = "Testowa", Grade = 4, ClassID = 1 },
-                new Student() { FirstName = "Magda", LastName = "Próbująca", Grade = 4, ClassID = 1 },
-                new Student() { FirstName = "Teresa", LastName = "Tester", Grade = 2, ClassID = 2 },
+                new Student() { FirstName = "Janusz", LastName = "Testowy", Grade = 2, ClassID = 1 },
+                new Student() { FirstName = "Leszek", LastName = "Tester", Grade = 3, ClassID = 1 },
+                new Student() { FirstName = "Dagmara", LastName = "Kowalska", Grade = 5, ClassID = 1 },
+                new Student() { FirstName = "Agata", LastName = "Nowak", Grade = 4, ClassID = 1 },
             };
             
             foreach(var t in team)

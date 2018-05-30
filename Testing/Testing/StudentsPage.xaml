@@ -4,6 +4,7 @@
              x:Class="Testing.StudentsPage">
     <ContentPage.Content>
         <StackLayout>
+            <Button Text="Add new student" Clicked="btnAddNew_Clicked" />
             <ListView x:Name="lvStudents">
                 <ListView.ItemTemplate>
                     <DataTemplate>

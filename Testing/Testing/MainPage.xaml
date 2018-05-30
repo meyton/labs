@@ -33,7 +33,7 @@
 
             <Button
             Text="Check DB"
-            Clicked="btnCheckDB_Clicked"
+            Clicked="btnCreateOld_Clicked"
             BackgroundColor="{StaticResource PrimaryColor}"
          />
 
