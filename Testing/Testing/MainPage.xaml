@@ -4,28 +4,59 @@
              xmlns:local="clr-namespace:Testing"
              x:Class="Testing.MainPage">
 
-    <StackLayout>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
 
-        <Label x:Name="lblTest"
+        <Grid.RowDefinitions>
+            <RowDefinition Height="85*" />
+            <RowDefinition Height="15*" />
+        </Grid.RowDefinitions>
+        
+        <StackLayout Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" >
+
+            <Label x:Name="lblTest"
         BackgroundColor="BlueViolet"
         Text="Welcome to Xamarin.Forms!"
         HorizontalOptions="Center"/>
 
-        <Entry x:Name="entryUrl"
+            <Entry x:Name="entryUrl"
                Placeholder="Tutaj wpisz URL (wraz z https://)" />
-        
+
+            <Button
+            Text="Check Properties"
+            Clicked="btnProp_Clicked"
+            BackgroundColor="{StaticResource PrimaryColor}"
+         />
+
+            <Button
+            Text="Check DB"
+            Clicked="btnCheckDB_Clicked"
+            BackgroundColor="{StaticResource PrimaryColor}"
+         />
+
+            <Button
+            Text="Check Count"
+            Clicked="btnCountDB_Clicked"
+            BackgroundColor="{StaticResource PrimaryColor}" />
+
+        </StackLayout>
         <Button x:Name="btnOpenUrl"
+                Grid.Column="0"
+                Grid.Row="1"
             Text="Open Page in WebView"
             Clicked="btnOpenUrl_Clicked"
             BackgroundColor="{StaticResource PrimaryColor}"
          />
 
         <Button x:Name="btnCheckUrl"
+                Grid.Column="1"
+                Grid.Row="1"
             Text="Check Page in HttpClient"
             Clicked="btnCheckUrl_Clicked"
-            BackgroundColor="{StaticResource PrimaryColor}"
+            BackgroundColor="AliceBlue"
          />
-
-    </StackLayout>
-    
+    </Grid>
 </ContentPage>

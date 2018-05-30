@@ -4,12 +4,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.27428.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testing.Android", "Testing\Testing.Android\Testing.Android.csproj", "{B75E3851-458D-4BBB-B510-C30FB73D080E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{132FC714-5969-4DB0-AF93-194B0FD5C371} = {132FC714-5969-4DB0-AF93-194B0FD5C371}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testing.iOS", "Testing\Testing.iOS\Testing.iOS.csproj", "{9527D24A-ED77-4C7F-A0A2-6F62DCB9011F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testing.UWP", "Testing\Testing.UWP\Testing.UWP.csproj", "{8B5E079D-00AA-47FC-8DBA-7E9146C6A344}"
+	ProjectSection(ProjectDependencies) = postProject
+		{132FC714-5969-4DB0-AF93-194B0FD5C371} = {132FC714-5969-4DB0-AF93-194B0FD5C371}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testing", "Testing\Testing\Testing.csproj", "{132FC714-5969-4DB0-AF93-194B0FD5C371}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Testing", "Testing\Testing\Testing.csproj", "{132FC714-5969-4DB0-AF93-194B0FD5C371}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
