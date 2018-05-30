@@ -41,6 +41,10 @@
             Text="Check Count"
             Clicked="btnCountDB_Clicked"
             BackgroundColor="{StaticResource PrimaryColor}" />
+            
+            <Button
+            Text="See Classes"
+            Clicked="btnCreate_Clicked" />
 
         </StackLayout>
         <Button x:Name="btnOpenUrl"

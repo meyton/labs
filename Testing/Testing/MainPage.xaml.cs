@@ -15,6 +15,7 @@ namespace Testing
 		{
 			InitializeComponent();
         }
+        
 
         internal async void btnCheckUrl_Clicked(object sender, EventArgs e)
         {
@@ -70,6 +71,32 @@ namespace Testing
                     await App.LocalDB.DeleteItemAsync(student);
                 }
             }
+        }
+
+        internal async void btnCreateOld_Clicked(object sender, EventArgs e)
+        {
+            var team = new List<Student>()
+            {
+                new Student() { FirstName = "Marcin", LastName = "Testowy", Grade = 2, ClassID = 1 },
+                new Student() { FirstName = "Krzysztof", LastName = "Tester", Grade = 3, ClassID = 1 },
+                new Student() { FirstName = "Rafał", LastName = "Kowalski", Grade = 5, ClassID = 2 },
+                new Student() { FirstName = "Grzegorz", LastName = "Nowak", Grade = 3, ClassID = 2 },
+                new Student() { FirstName = "Iza", LastName = "Testowa", Grade = 4, ClassID = 1 },
+                new Student() { FirstName = "Magda", LastName = "Próbująca", Grade = 4, ClassID = 1 },
+                new Student() { FirstName = "Teresa", LastName = "Tester", Grade = 2, ClassID = 2 },
+            };
+            
+            foreach(var t in team)
+            {
+                await App.LocalDB.SaveItemAsync(t);
+            }
+
+            await DisplayAlert("OK", "Dane zostały dodane", "OK");
+        }
+
+        internal async void btnCreate_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ClassesPage());
         }
     }
 }

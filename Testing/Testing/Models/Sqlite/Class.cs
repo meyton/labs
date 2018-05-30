@@ -5,13 +5,11 @@ using System.Text;
 
 namespace Testing.Models.Sqlite
 {
-    public class Student
+    class Class
     {
         [PrimaryKey, AutoIncrement]
         public int ID { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public int Grade { get; set; }
-        public int ClassID { get; set; }
+        public string Name { get; set; }
+        public string Teacher { get; set; }
     }
 }

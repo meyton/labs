@@ -15,6 +15,7 @@ namespace Testing.Data
         {
             database = new SQLiteAsyncConnection(dbPath);
             database.CreateTableAsync<Student>().Wait();
+            database.CreateTableAsync<Class>().Wait();
         }
 
         private async void Init()
@@ -40,6 +41,11 @@ namespace Testing.Data
         internal async Task<Student> GetStudentByID(int id)
         {
             return await database.Table<Student>().Where(x => x.ID == id).FirstOrDefaultAsync();
+        }
+
+        internal async Task<List<Student>> GetStudentsByClassId(int id)
+        {
+            return await database.Table<Student>().Where(x => x.ClassID == id).ToListAsync();
         }
 
         public async Task<int> SaveItemAsync<T>(T item)

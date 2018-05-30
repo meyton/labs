@@ -18,6 +18,9 @@
     <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="App.xaml.cs">
       <DependentUpon>*.xaml</DependentUpon>
     </Compile>
+    <Compile Update="StudentsPage.xaml.cs">
+      <DependentUpon>StudentsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="WebViewPage.xaml.cs">
       <DependentUpon>WebViewPage.xaml</DependentUpon>
     </Compile>
@@ -30,6 +33,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="ClassesPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="HttpClientPage2.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

@@ -9,6 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testing.Android", "Testing\
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testing.iOS", "Testing\Testing.iOS\Testing.iOS.csproj", "{9527D24A-ED77-4C7F-A0A2-6F62DCB9011F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{132FC714-5969-4DB0-AF93-194B0FD5C371} = {132FC714-5969-4DB0-AF93-194B0FD5C371}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testing.UWP", "Testing\Testing.UWP\Testing.UWP.csproj", "{8B5E079D-00AA-47FC-8DBA-7E9146C6A344}"
 	ProjectSection(ProjectDependencies) = postProject
