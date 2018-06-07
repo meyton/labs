@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Testing.Views.TestingPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="{Binding Message}"
+                HorizontalOptions="CenterAndExpand" />
+            <Button Text="{Binding BtnText}"
+                HorizontalOptions="CenterAndExpand"
+                    Command="{Binding NavigateCommand}"/>
+            <Button Text="Kategoria wiekowa 18-25"
+                HorizontalOptions="CenterAndExpand"
+                    Command="{Binding CategoryCommand}"
+                    CommandParameter="18-25"/>
+            <Button Text="Kategoria wiekowa 26-32"
+                HorizontalOptions="CenterAndExpand"
+                    Command="{Binding CategoryCommand}"
+                    CommandParameter="26-32"/>
+            <ListView ItemsSource="{Binding Items}" 
+                VerticalOptions="CenterAndExpand" 
+                      HorizontalOptions="CenterAndExpand">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Range}" Detail="{Binding ID}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

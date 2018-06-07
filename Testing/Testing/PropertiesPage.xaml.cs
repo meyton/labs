@@ -15,9 +15,9 @@ namespace Testing
 		public PropertiesPage ()
 		{
 			InitializeComponent ();
-            if (Properties.AppProperties.ContainsKey("btnClickedCount"))
+            if (Properties.AppProperties.ContainsKey("isButtonClicked"))
             {
-                var keyValue = Properties.AppProperties["btnClickedCount"].ToString();
+                var keyValue = Properties.AppProperties["isButtonClicked"].ToString();
                 lblproperty.Text = keyValue;
             }            
         }

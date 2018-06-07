@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Testing.StudentDetailsPage">
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <Label x:Name="lblName" Text="Edytujesz: Imię Nazwisko"
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand" />
+            <Entry x:Name="entryGrade" Text="5" Placeholder="Wprowadź ocenę..." />
+            <Button Margin="40" Text="Zapisz" Clicked="btnSave_Clicked" />
+            <Button Margin="40" Text="Usuń z bazy" Clicked="btnDelete_Clicked" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:Testing"
              x:Class="Testing.WebViewPage">
 
-    <WebView x:Name="wvWeb" Source="https://wp.pl" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+    <WebView x:Name="wvWeb" Source="" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
 
 </ContentPage>

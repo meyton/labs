@@ -18,7 +18,9 @@ namespace Testing
             {
                 if (localDB == null)
                 {
-                    localDB = new LocalDB(DependencyService.Get<IFileHelper>().GetLocalFilePath("App.db3"));
+                    var fileHelper = DependencyService.Get<IFileHelper>();
+                    var fileName = fileHelper.GetLocalFilePath("App.db3");
+                    localDB = new LocalDB(fileName);
                 }
                 return localDB;
             }
@@ -28,8 +30,9 @@ namespace Testing
 		{
 			InitializeComponent();
 			MainPage = new NavigationPage(new Testing.MainPage());
+            
 		}
-
+        
 		protected override void OnStart ()
 		{
 			// Handle when your app starts

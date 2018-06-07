@@ -16,7 +16,6 @@ namespace Testing
 			InitializeComponent();
         }
         
-
         internal async void btnCheckUrl_Clicked(object sender, EventArgs e)
         {
             Properties.AppProperties["isButtonClicked"] = "Tak, button został kliknięty";
@@ -41,8 +40,10 @@ namespace Testing
 
         internal async void btnProp_Clicked(object sender, EventArgs e)
         {
-            //await Navigation.PushAsync(new PropertyPage());
-            await Navigation.PushAsync(new ListingPage());
+            //await Navigation.PushAsync(new PropertiesPage());
+            //await Navigation.PushAsync(new ListingPage());
+            //await Navigation.PushAsync(new ListViewPage1());
+            await Navigation.PushAsync(new Views.TestingPage());
         }
 
         internal async void btnCheckDB_Clicked(object sender, EventArgs e)

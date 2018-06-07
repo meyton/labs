@@ -15,12 +15,22 @@ namespace Testing
         private List<Models.UI.Student> _students;
         private Class _class;
 
-		public StudentsPage(List<Student> students, Class passedClass)
+		public StudentsPage(Class passedClass)
 		{
 			InitializeComponent();
-            _students = new List<Models.UI.Student>();
-            _class = passedClass;
+            _class = passedClass;    
+            
+        }
 
+        internal async void btnAddNew_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AddNewStudentPage(_class.ID));
+        }
+
+        protected override async void OnAppearing()
+        {
+            var students = await App.LocalDB.GetStudentsByClassId(_class.ID);
+            _students = new List<Models.UI.Student>();
             foreach (var s in students)
             {
                 _students.Add(new Models.UI.Student()
@@ -33,11 +43,15 @@ namespace Testing
             }
 
             lvStudents.ItemsSource = _students;
+            lvStudents.ItemTapped -= LvStudents_ItemTapped;
+            lvStudents.ItemTapped += LvStudents_ItemTapped;
         }
 
-        internal async void btnAddNew_Clicked(object sender, EventArgs e)
+        private async void LvStudents_ItemTapped(object sender, ItemTappedEventArgs e)
         {
-            await Navigation.PushAsync(new AddNewStudentPage(_class.ID));
+            var student = (Models.UI.Student)e.Item;
+            var dbStudent = await App.LocalDB.GetStudentByID(student.ID);
+            await Navigation.PushAsync(new StudentDetailsPage(dbStudent));
         }
     }
 }

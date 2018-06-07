@@ -16,6 +16,7 @@ namespace Testing.Data
             database = new SQLiteAsyncConnection(dbPath);
             database.CreateTableAsync<Student>().Wait();
             database.CreateTableAsync<Class>().Wait();
+            database.CreateTableAsync<Category>().Wait();
         }
 
         private async void Init()

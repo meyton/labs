@@ -29,8 +29,7 @@ namespace Testing
         private async void LvClasses_ItemTapped(object sender, ItemTappedEventArgs e)
         {
             var selectedClass = (Class)e.Item;
-            var students = await App.LocalDB.GetStudentsByClassId(selectedClass.ID);
-            await Navigation.PushAsync(new StudentsPage(students, selectedClass));
+            await Navigation.PushAsync(new StudentsPage(selectedClass));
         }
 
         internal async void btnAddNew_Clicked(object sender, EventArgs e)
