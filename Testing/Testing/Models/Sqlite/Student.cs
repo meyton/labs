@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Testing.Models.Sqlite
 {
-    public class Student
+    public class Student : ISqliteModel
     {
         [PrimaryKey, AutoIncrement]
         public int ID { get; set; }

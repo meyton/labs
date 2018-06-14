@@ -24,6 +24,27 @@ namespace Testing.Data
             await database.CreateTableAsync<Student>();
         }
 
+        public async Task<List<T>> GetAllGeneric<T>() where T : class, ISqliteModel, new()
+        {
+            return await database.Table<T>().ToListAsync();
+        }
+
+        public async Task<int> SaveGeneric<T>(T item)
+        {
+            var result = await database.UpdateAsync(item);
+
+            if (result == 0)
+                result = await database.InsertAsync(item);
+
+            return result;
+        }
+
+        public async Task<int> DeleteGeneric<T>(T item)
+        {
+            var result = await database.DeleteAsync(item);
+            return result;
+        }
+        
         public async Task<List<Student>> GetAllStudents()
         {
             return await database.Table<Student>().ToListAsync();

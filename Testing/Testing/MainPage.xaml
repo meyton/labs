@@ -32,8 +32,8 @@
          />
 
             <Button
-            Text="Check DB"
-            Clicked="btnCreateOld_Clicked"
+            Text="GRY Classes"
+            Clicked="btnCheckDB_Clicked"
             BackgroundColor="{StaticResource PrimaryColor}"
          />
 
@@ -45,6 +45,15 @@
             <Button
             Text="See Classes"
             Clicked="btnCreate_Clicked" />
+
+            <Button Text="To jest button z obrazkiem" Image="trash.png" ContentLayout="Top" />
+
+            <Image x:Name="imgTest" Source="trash.png"></Image>
+            <!--<Image Source="trash.png" Aspect="AspectFill"></Image>
+            <Image Source="trash.png" Aspect="Fill"></Image>
+            <Image x:Name="imgTest" Source="trash.png" Aspect="AspectFit"></Image>-->
+
+            <!--<Button Image="trash.png" ContentLayout="Top" Text="Button z obrazkiem" BackgroundColor="Tomato" />-->
 
         </StackLayout>
         <Button x:Name="btnOpenUrl"

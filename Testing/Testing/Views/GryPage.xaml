@@ -1,15 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Testing.Views.TestPage">
+             x:Class="Testing.Views.GryPage">
     <ContentPage.Content>
         <StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <Label Text="{Binding Message}"/>
-                <Image Source="{Binding Icon}"></Image>
-            </StackLayout>
-            <ListView ItemsSource="{Binding Items}" VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand"  >
+            <Label Text="{Binding LabelValue}"
+                VerticalOptions="CenterAndExpand" />
+            <Button Text="Test" Command="{Binding TestCommand}" CommandParameter="2"/>
+            
+            <ListView ItemsSource="{Binding Items}" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <TextCell Text="{Binding .}" />

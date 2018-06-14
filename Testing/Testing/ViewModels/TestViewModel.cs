@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace Testing.ViewModels
 {
     public class TestViewModel : BaseViewModel
     {
         public ObservableCollection<string> Items { get; set; }
+        public ImageSource Icon { get; set; }
 
         private string _message;
 
@@ -30,6 +32,7 @@ namespace Testing.ViewModels
             Message = "To jest message";
             Items = new ObservableCollection<string>();
             Init();
+            Icon = ImageSource.FromFile("trash.png");
         }
 
         private async void Init()
